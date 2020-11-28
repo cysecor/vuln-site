@@ -2,26 +2,29 @@
 include 'connection.php';
 
 $username = $mysqli->real_escape_string(strip_tags($_POST["username"]));
-$password = $mysqli->real_escape_string($_POST["password"]);
+$password = $mysqli->real_escape_string(strip_tags($_POST["password"]));
 
-$sql = "SELECT * FROM users WHERE username = '".$username."'AND password = '".$password."'";
+$sql = "SELECT * FROM users WHERE username = '".$username . "'";
 $result = $mysqli->query($sql);
 
 if($result->num_rows == 1){
     $row = $result->fetch_assoc();
 
-    $_SESSION["loggedIn"] = TRUE;
-    $_SESSION["username"] = $row["username"];
-    $_SESSION["user_id"] = $row["id"];
-    $_SESSION["nastavnik"] = 0;
+    if(password_verify($password, $row["password"])) {
+        $_SESSION["loggedIn"] = TRUE;
+        $_SESSION["username"] = $row["username"];
+        $_SESSION["user_id"] = $row["id"];
+        $_SESSION["nastavnik"] = 0;
 
-    if($row["nastavnik"] == "1") {
-        $_SESSION["nastavnik"] = 1;
-        header('location:../nastavnik/index.php');
+        if($row["nastavnik"] == "1") {
+            $_SESSION["nastavnik"] = 1;
+            header('location:../nastavnik/index.php');
+        } else {
+            header('location:../ucenik.php');
+        }
     } else {
-        header('location:../ucenik.php');
+        $error = "Netacan username ili password!<br>";
     }
-
 
 } else{
     $error = "Netacan username ili password!<br>";

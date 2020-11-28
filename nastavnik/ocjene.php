@@ -1,9 +1,11 @@
 <?php include "header.php"; ?>
 
-<h3>Ucenikov ID: <?php echo strip_tags($_GET['ucenik_id']); ?></h3>
+<h3>Ucenikov ID: <?php echo $_GET['ucenik_id']; ?></h3>
+<!-- strip_tags -->
 <br>
 
-<a href="dodajOcjenu.php?ucenik_id=<?php echo htmlspecialchars(strip_tags((int)$_GET['ucenik_id'])); ?>">Dodaj ocjenu</a>
+<a href="dodajOcjenu.php?ucenik_id=<?php echo $_GET['ucenik_id']; ?>">Dodaj ocjenu</a>
+<!-- htmlspecialchars(strip_tags((int) -->
 <br><br>
 
 <?php

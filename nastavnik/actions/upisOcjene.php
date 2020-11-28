@@ -2,8 +2,8 @@
 include '../../actions/connection.php';
 
 $predmet = $mysqli->real_escape_string(strip_tags($_POST["predmet"]));
-$ocjena = $mysqli->real_escape_string(($_POST["ocjena"]));
-$ucenik_id = $mysqli->real_escape_string(($_POST["ucenik_id"]));
+$ocjena = $mysqli->real_escape_string(strip_tags(($_POST["ocjena"])));
+$ucenik_id = $mysqli->real_escape_string(strip_tags(($_POST["ucenik_id"])));
 
 $sql = "SELECT * FROM ocjene WHERE ucenik_id = $ucenik_id AND predmet = '$predmet'";
 $result = $mysqli->query($sql);
