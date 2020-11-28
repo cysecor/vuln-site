@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 
        let file_temp = $("#domaciUpload input").val();
 
-       if(file_temp.includes('.png')) {
+       if(file_temp.includes('.png') || file_temp.includes('.jpg') || file_temp.includes('.jpeg')) {
            $("#domaciUpload").submit();
        } else {
            alert('Fajl mora biti PNG, JPG ili JPEG');
