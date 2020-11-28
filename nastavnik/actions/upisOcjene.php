@@ -1,7 +1,7 @@
 <?php
 include '../../actions/connection.php';
 
-$predmet = $mysqli->real_escape_string(stripslashes(strip_tags($_POST["predmet"])));
+$predmet = $mysqli->real_escape_string(strip_tags($_POST["predmet"]));
 $ocjena = $mysqli->real_escape_string(($_POST["ocjena"]));
 $ucenik_id = $mysqli->real_escape_string(($_POST["ucenik_id"]));
 

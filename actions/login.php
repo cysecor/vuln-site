@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 
-$username = $mysqli->real_escape_string(stripslashes(strip_tags($_POST["username"])));
+$username = $mysqli->real_escape_string(strip_tags($_POST["username"]));
 $password = $mysqli->real_escape_string($_POST["password"]);
 
 $sql = "SELECT * FROM users WHERE username = '".$username."'AND password = '".$password."'";

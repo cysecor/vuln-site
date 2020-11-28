@@ -2,9 +2,9 @@
 include '../../actions/connection.php';
 
 $username = $_POST["username"];
-//$username = $mysqli->real_escape_string(stripslashes(strip_tags($_POST["username"])));
+//$username = $mysqli->real_escape_string(strip_tags($_POST["username"]));
 $password = $mysqli->real_escape_string(($_POST["password"]));
-$email = $mysqli->real_escape_string(stripslashes(strip_tags($_POST["email"])));
+$email = $mysqli->real_escape_string(strip_tags($_POST["email"]));
 
 $sql = 'SELECT * FROM users WHERE username = "'.$username.'"';
 $result = $mysqli->query($sql);
