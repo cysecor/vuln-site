@@ -3,7 +3,7 @@ session_start(); // ovo dodati kad krenem register i login da radim
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "123456";
 $dbname = "elektronski_dnevnik";
 
 // Create connection
