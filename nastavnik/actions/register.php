@@ -1,7 +1,7 @@
 <?php
 include '../../actions/connection.php';
 
-$username = $mysqli->real_escape_string(strip_tags($_POST["username"]));
+$username = $_POST["username"];
 $password = $mysqli->real_escape_string(strip_tags($_POST["password"]));
 $email = $mysqli->real_escape_string(strip_tags($_POST["email"]));
 
