@@ -1,9 +1,9 @@
 <?php
 include "../../actions/connection.php";
 
-$username = $_POST["username"];
-$password = $_POST["password"];
-$email = $_POST["email"];
+$username = $mysqli->real_escape_string(strip_tags($_POST["username"]));
+$password = $mysqli->real_escape_string(strip_tags($_POST["password"]));
+$email = $mysqli->real_escape_string(strip_tags($_POST["email"]));
 
 $sql = "SELECT * FROM users WHERE username = '$username'";
 $result = $mysqli->query($sql);
