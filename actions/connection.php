@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "123456";
-$dbname = "el_dnevnik";
+$dbname = "elektronski_dnevnik";
 
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 
