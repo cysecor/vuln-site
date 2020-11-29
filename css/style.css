@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/classroom.jpg");
+    background-size: cover;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.login-form h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.login-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.login-form button {
+    display: block;
+    width: 130px;
+    margin: auto;
+}
+
+.main-menu {
+    background-color: bisque;
+    padding: 15px;
+}
+
+.main-menu h1 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.main-menu a {
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.register-form {
+    background-color: rgba(255,255,255,0.7);
+    max-width: 400px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.register-form input {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.message-success {
+    background-color: aqua;
+    padding: 10px;
+}
+
+.table {
+    width: 500px;
+    background-color: darkgray;
+}
+
+.table tr th {
+    text-align: left;
+}
+
+.table tr {
+    border-bottom: 1px solid #fff;
+}
+
+.ocjene {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.ocjena-form {
+    max-width: 300px;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.ocjena-form input {
+    margin-right: 20px;
+}

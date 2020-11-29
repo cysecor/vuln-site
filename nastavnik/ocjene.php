@@ -1,39 +1,43 @@
 <?php include "header.php"; ?>
 
-<h3>Ucenikov ID: <?php echo $_GET['ucenik_id']; ?></h3>
-<!-- strip_tags -->
-<br>
+<div class="ocjene">
 
-<a href="dodajOcjenu.php?ucenik_id=<?php echo $_GET['ucenik_id']; ?>">Dodaj ocjenu</a>
-<!-- htmlspecialchars(strip_tags((int) -->
-<br><br>
+    <h3>Ucenikov ID: <?php echo $_GET['ucenik_id']; ?></h3>
 
-<?php
-$ucenik_id = $mysqli->real_escape_string(strip_tags((int)$_GET['ucenik_id']));
+    <br>
 
-$sql = 'SELECT * FROM ocjene WHERE ucenik_id = ' . $ucenik_id;
-$result = $mysqli->query($sql);
-?>
+    <a href="dodajOcjenu.php?ucenik_id=<?php echo $_GET['ucenik_id'] ?>">Dodaj ocjenu</a>
 
-<table border="1">
-
-    <tr>
-        <th>Predmet</th>
-        <th>Ocjena</th>
-    </tr>
+    <br><br>
 
     <?php
-    while ($row = $result->fetch_assoc()) {
-        ?>
+    $ucenik_id = $mysqli->real_escape_string(strip_tags((int)$_GET['ucenik_id']));
 
+    $sql = "SELECT * FROM ocjene WHERE ucenik_id = " . $ucenik_id;
+    $results = $mysqli->query($sql);
+    ?>
+
+    <table class="table">
         <tr>
-            <td><?php echo $row['predmet'] ?></td>
-            <td><?php echo $row['ocjena'] ?></td>
+            <th>Predmet</th>
+            <th>Ocjena</th>
         </tr>
 
         <?php
-    }
-    ?>
-</table>
+        while($row = $results->fetch_assoc()) {
+            ?>
+
+            <tr>
+                <td><?php echo $row['predmet']; ?></td>
+                <td><?php echo $row['ocjena']; ?></td>
+            </tr>
+
+        <?php
+        }
+
+        ?>
+    </table>
+
+</div>
 
 <?php include "footer.php"; ?>

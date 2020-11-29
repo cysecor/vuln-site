@@ -1,17 +1,18 @@
 <?php include "header.php"; ?>
 
 <?php
-if(isset($_SESSION['message'])) {
-    echo $_SESSION['message'];
+if (isset($_SESSION['message'])) {
+    echo "<p class='message-success'>" . $_SESSION['message'] . "</p>";
     unset($_SESSION['message']);
 }
 
-$sql = 'SELECT * FROM users WHERE nastavnik != 1';
+$sql = "SELECT * FROM users WHERE nastavnik != 1";
 $result = $mysqli->query($sql);
 ?>
 
-<table border="1">
+<h1>Lista ucenika</h1>
 
+<table class="table">
     <tr>
         <th>Username</th>
         <th>Email</th>
@@ -20,18 +21,20 @@ $result = $mysqli->query($sql);
 
     <?php
 
-    while ($row = $result->fetch_assoc()) {
-        ?>
+    while($row = $result->fetch_assoc()) { ?>
 
         <tr>
             <td><?php echo $row['username'] ?></td>
             <td><?php echo $row['email'] ?></td>
-            <td><a href="ocjene.php?ucenik_id=<?php echo $row['id'] ?>">Vidi ocjene</a></td>
+            <td><a href="ocjene.php?ucenik_id=<?php echo $row['id']; ?>">Vidi ocjene</a></td>
         </tr>
 
-        <?php
-    }
+    <?php }
+
     ?>
+
 </table>
+
+
 
 <?php include "footer.php"; ?>

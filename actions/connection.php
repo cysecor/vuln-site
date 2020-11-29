@@ -1,15 +1,13 @@
 <?php
-session_start(); // ovo dodati kad krenem register i login da radim
+session_start();
 
 $servername = "localhost";
 $username = "root";
-$password = "123456";
-$dbname = "elektronski_dnevnik";
+$password = "";
+$dbname = "el_dnevnik";
 
-// Create connection
 $mysqli = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
+if($mysqli->connect_error) {
+    die("Konekcija nije uspjela: " . $mysqli->connect_error);
 }
